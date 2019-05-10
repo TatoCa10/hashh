@@ -5,15 +5,24 @@
  */
 package com.mkyong.rest;
 
+/**
+ *
+ * @author Labing
+ */
+
+import java.io.IOException;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import org.web3j.tx.Contract;
+import org.web3j.tx.ManagedTransaction;
 
 @Path("/hello")
 public class HelloWorldService {
-
-	@GET
+ 	@GET
 	@Path("/{param}")
 	public Response getMsg(@PathParam("param") String msg) {
 
@@ -21,5 +30,7 @@ public class HelloWorldService {
 		return Response.status(200).entity(output).build();
 
 	}
-
+        
+        
+       
 }
